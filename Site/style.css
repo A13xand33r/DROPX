@@ -1,0 +1,213 @@
+/* =======================
+   General Reset & Fonts
+   ======================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', sans-serif;
+  background: #1f1f1f;
+  color: #e0e0e0;
+  min-height: 100vh;
+}
+
+/* =======================
+   Header / Navbar
+   ======================= */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: #2c2c2c;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 2px solid #3a8edb;
+}
+
+header h1 {
+  font-size: 2rem;
+  letter-spacing: 2px;
+  color: #3a8edb;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+header div button {
+  background: #3a3a3a;
+  border: none;
+  color: #a0cfff;
+  padding: 10px 18px;
+  margin-left: 15px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+header div button:hover {
+  background: #3a8edb;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+/* =======================
+   Main Sections
+   ======================= */
+main {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.tab {
+  display: none;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.tab.active {
+  display: block;
+}
+
+/* =======================
+   Tab Content Styling
+   ======================= */
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #3a8edb;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+#deliveriesList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.delivery {
+  background: #2c2c2c;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.delivery:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.8);
+}
+
+/* =======================
+   New Delivery Section
+   ======================= */
+#newdeliveryTab input[type="text"] {
+  width: calc(100% - 140px);
+  padding: 12px 18px;
+  border: none;
+  border-radius: 10px 0 0 10px;
+  font-size: 1rem;
+  outline: none;
+  background: #3a3a3a;
+  color: #e0e0e0;
+}
+
+#newdeliveryTab button#addBtn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 0 10px 10px 0;
+  background: #3a8edb;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#newdeliveryTab button#addBtn:hover {
+  background: #5aa3ff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+}
+
+#qrContainer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+/* =======================
+   Popup Styling
+   ======================= */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.popup-content {
+  background: #2c2c2c;
+  padding: 30px 40px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.8);
+  font-size: 1.1rem;
+  border: 2px solid #3a8edb;
+}
+
+.popup-content button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #3a8edb;
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.popup-content button:hover {
+  background: #5aa3ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+/* =======================
+   Animations
+   ======================= */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* =======================
+   Responsive
+   ======================= */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #newdeliveryTab input[type="text"] {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
+  #newdeliveryTab button#addBtn {
+    width: 100%;
+    border-radius: 10px;
+  }
+}
